@@ -1,0 +1,126 @@
+[
+  {
+    "description": "tier1_agent_system_prompt",
+    "content": "You are an expert in manual translation evaluation based on the MQM framework, responsible for coordinating a major category, each consisting of multiple subcategories. In previous work, each subcategory had a dedicated evaluator responsible for finding errors of that type and determining the severity. Now, a subcategory of evaluator has expressed his lack of confidence in his answers, especially on severity. Please review their work and provide your opinions for discussion with them.\n"
+  },
+  {
+    "description": "tier2_agent_system_prompt",
+    "content": "You are an evaluator who manually evaluates translations based on the MQM framework. In your previous work, you were not sure about the accuracy of the evaluation of a certain sentence pair. Therefore, you communicated with the expert in charge of coordinating the evaluation of the subcategory you are responsible for.\n"
+  },
+  {
+    "description": "tier1_agent_round1",
+    "content": "The following is the source sentence and its corresponding translation, as well as the assessment of the subcategory evaluator on the existence and severity of the error. Please provide your opinion. If you believe that the evaluator's viewpoint is correct, please ONLY reply with 'I agree with him.' without any other information! If you are not agree, please reply with the below format:\nError Exist: 'Yes' or 'No'.\nError Severity: 'Major', 'Minor', or 'Neutral'. \nAnd then briefly present your viewpoint for discussion. \n\n Instruction: \nPlease pay attention to whether the judgment of severity is correct. Judging severity as major is not correct in most cases. Please carefully consider when judging severity as major."
+  },
+  {
+    "description": "tier2_agent_round1",
+    "content": "Regarding the source sentence and its translation, as well as the evaluation answer you provided, your superior evaluation expert has provided the following opinions. Please indicate whether you agree with their viewpoint. If so, please ONLY reply with 'I agree with him'. Otherwise, present your viewpoint for further discussion. \n\n Instruction: \nPlease pay attention to whether the judgment of severity is correct. Judging severity as major is not correct in most cases. Please carefully consider when judging severity as major."
+  },
+  {
+    "description": "tier1_agent_round2",
+    "content": "Based on the following source sentences and translations, as well as the opinions of the subcategory assessors, you have had a round of discussion with them. Now, the subcategory evaluator has presented their opinion. Please evaluate whether you agree with their viewpoint. If you agree, please ONLY reply with 'I agree with him'. Otherwise, please further present your viewpoint.\n\n Instruction: \nPlease pay attention to whether the judgment of severity is correct. Judging severity as major is not correct in most cases. Please carefully consider when judging severity as major."
+  },
+  {
+    "description": "tier2_agent_round2",
+    "content": "Regarding the source sentence and its translation, as well as the evaluation answer you provided, your previous discussion process and the latest opinions from the higher-level evaluation experts are as follows. If you agree with their viewpoint, ONLY reply with 'I agree with him'. otherwise, ONLY reply with 'I still disagree with him'. \n\n Instruction: \nPlease pay attention to whether the judgment of severity is correct. Judging severity as major is not correct in most cases. Please carefully consider when judging severity as major."
+  },
+  {
+    "description": "error_severity",
+    "content": "Only after confirming whether the error responsible for the subcategory exists, can severity be determined. Error severities are assigned independent of category, and consist of Major, Minor, and Neutral levels, corresponding, respectively, to actual translation or grammatical errors, smaller imperfections, and purely subjective opinions about the translation.\n"
+  },
+  {
+    "description": "Addition",
+    "content": "Addition -- The translation introduces any information -- including words, phrases, implied meanings, punctuation, or tone -- that is not present in the source text, thereby expanding or altering the original meaning or format.\n"
+  },
+  {
+    "description": "Omission",
+    "content": "Omission -- A paragraph present in the source (including the noun, verb, adverb, adverbial, punctuation and so on) is missing in the translation. \n"
+  },
+  {
+    "description": "Mistranslation",
+    "content": "Mistranslation -- Incorrect use in target content of a word, inconsistent match, and the incorrect segmentation. \n"
+  },
+  {
+    "description": "Untranslated_text",
+    "content": "Untranslated text -- Words in the source text that are not translated into the target language, excluding proper nouns (e.g., names, brands) and placeholders (e.g., #GOODS_NAME#). Please compare word by word, as long as there are untranslated words, they belong to the error.\n"
+  },
+  {
+    "description": "Inappropriate_for_context",
+    "content": "Inappropriate for context -- Use of a term that differs from term usage required by a specified termbase or other resource.\n"
+  },
+  {
+    "description": "Inconsistent_use",
+    "content": "Inconsistent_use -- Terminology is used inconsistently\n"
+  },
+  {
+    "description": "Punctuation",
+    "content": "Punctuation -- 1.Punctuation errors include unpaired quotes, missing or unnecessary marks, and incorrect use. 2.According to international standards, whatever the language is, the thousand separator must use a comma (,) and the decimal point must use a period (.)). Strict adherence to international standards is required, not following this rule will be considered an error. \n"
+  },
+  {
+    "description": "Spelling",
+    "content": "Spelling -- Error occurring when a word is misspelled.\n"
+  },
+  {
+    "description": "Grammar",
+    "content": "Grammar -- Subject-verb disagreement, incorrect verb tenses or forms, and improper declension of nouns, pronouns, or adjectives. \n"
+  },
+  {
+    "description": "Register",
+    "content": "Register -- Wrong grammatical register (e.g. inappropriately informal pronouns).\n"
+  },
+  {
+    "description": "Inconsistency",
+    "content": "Inconsistency -- Internal inconsistency (not related to terminology).\n"
+  },
+  {
+    "description": "Character_encoding",
+    "content": "Character encoding -- Error occurring when characters garbled due to incorrect application of an encoding.\n"
+  },
+  {
+    "description": "Awkward",
+    "content": "Awkward -- Some languages provide grammatical and stylistic features that support complex, embedded ideas, which can result in awkward style if a target text retains these features. \n"
+  },
+  {
+    "description": "Address_format",
+    "content": "Address format -- Error involving inappropriate address format for locale. Such as Wrong form used for postal codes for target locale.\n"
+  },
+  {
+    "description": "Currency_format",
+    "content": "Currency format -- Incorrect currency format for its locale.\n"
+  },
+  {
+    "description": "Date_format",
+    "content": "Date format -- Error involving inappropriate date format for its locale.\n"
+  },
+  {
+    "description": "Name_format",
+    "content": "Name format -- Name format used in text or a data field inappropriate for its locale, such as switching the order of last and first names inappropriately.\n"
+  },
+  {
+    "description": "Telephone_format",
+    "content": "Telephone format -- Error involving inappropriate telephone number form for locale.\n"
+  },
+  {
+    "description": "Time_format",
+    "content": "Time format -- Error involving incorrrect time format for its locale. For example, Unless specified as using a 24 hour clock, US time formats report time after noon using 12-hour notation (for instance, '7:54:12 pm' instead of '19:54:12' used in many other countries.)\n"
+  },
+  {
+    "description": "Terminology",
+    "content": "The major category you are responsible for is Terminology. The definition of Terminology: Errors arising when a term does not conform to normative subject field or organizational terminology standards or when a term in the target content is not the correct, normative equivalent of the corresponding term in the source content.\nThe definitions of the subcategory of Terminology are:\nInappropriate for context -- Use of a term that differs from term usage required by a specified termbase or other resource.\nInconsistent_use -- Terminology is used inconsistently.\n"
+  },
+  {
+    "description": "Accuracy",
+    "content": "The major category you are responsible for is Accuracy. The definition of Accuracy: Errors occurring when the target content does not accurately correspond to the propositional content of the source text because of distortion, omission, or addition to the message.\nThe definitions of the subcategory of Accuracy are: \nAddition -- The translation introduces any information -- including words, phrases, implied meanings, punctuation, or tone -- that is not present in the source text, thereby expanding or altering the original meaning or format.\nOmission -- A paragraph present in the source is missing in the translation. \nMistranslation -- Incorrect use in target content of a word or inconsistent match in dates, times, numbers, entity, etc.. \nUntranslated text -- Words in the source text that are not translated into the target language, excluding proper nouns (e.g., names, brands) and placeholders (e.g., #GOODS_NAME#). Please compare word by word, as long as there are untranslated words, they belong to the error.\n"
+  },
+  {
+    "description": "Fluency",
+    "content": "The major category you are responsible for is Linguistic convention. The definition of Locale convention: Errors related to the linguistic well-formedness of the text, including problems with grammaticality, idiomaticity, and mechanical correctness.\nThe definitions of the subcategory of Linguistic convention are:\nPunctuation -- 1.Punctuation errors include unpaired quotes, missing or unnecessary marks, and incorrect use. 2.According to international standards, whatever the language is, the thousand separator must use a comma (,) and the decimal point must use a period (.)). Strict adherence to international standards is required, not following this rule will be considered an error.  \nSpelling -- Error occurring when a word is misspelled.\nGrammar -- Subject-verb disagreement, incorrect verb tenses or forms, and improper declension of nouns, pronouns, or adjectives. \nRegister -- Wrong grammatical register (e.g. inappropriately informal pronouns).\nInconsistency -- Internal inconsistency (not related to terminology).\nCharacter encoding -- Error occurring when characters garbled due to incorrect application of an encoding.\n"
+  },
+  {
+    "description": "Style",
+    "content": "The major category you are responsible for is Style. The definition of Style: Errors occurring in a text that are grammatically acceptable but are inappropriate because they deviate from organizational style guides or exhibit inappropriate language style.\nThe definitions of the subcategory of Style are:\nAwkward -- Some languages provide grammatical and stylistic features that support complex, embedded ideas, which can result in awkward style if a target text retains these features. \n"
+  },
+  {
+    "description": "Locale_conventions",
+    "content": "The major category you are responsible for is Locale convention. The definition of Locale conventions: Errors occurring when the translation product violates locale-specific content or formatting requirements for data elements.\nThe definitions of the subcategory of Locale convention are:\nAddress format -- Wrong format for addresses.\nCurrency format -- Wrong format for currency.\nDate format -- Wrong format for dates.\nName format -- Wrong format for names.\nTelephone format -- Wrong format for telephone numbers.\nTime format -- Wrong format for time expressions.\n"
+  }
+]

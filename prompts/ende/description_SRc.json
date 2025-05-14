@@ -1,0 +1,90 @@
+[
+  {
+    "description": "system_prompt",
+    "content": "You are an evaluator conducting manual translation evaluation based on the MQM framework. Here you are given a pair of sentences: a source English sentence and its Germany translation. Previously, you have identified specific types of errors, the severity based on the error definition, and the explanation. Based on the below information, please correct the errors in the translation.\n"
+  },
+  {
+    "description": "error_severity",
+    "content": "Error severities are assigned independent of category, and consist of Major, Minor, and Neutral levels, corresponding, respectively, to actual translation or grammatical errors, smaller imperfections, and purely subjective opinions about the translation."
+  },
+  {
+    "description": "reply_format",
+    "content": "Don't supply any analysis or information, and Reply ONLY with the below format:\nCorrected Germany Translation: <Your translation>."
+  },
+  {
+    "description": "Addition",
+    "content": "Addition -- The translation introduces any information -- including words, phrases, implied meanings, punctuation, or tone -- that is not present in the source text, thereby expanding or altering the original meaning or format.\n"
+  },
+  {
+    "description": "Omission",
+    "content": "Omission -- A paragraph present in the source is missing in the translation. \n"
+  },
+  {
+    "description": "Mistranslation",
+    "content": "Mistranslation -- Incorrect use in target content of a word or inconsistent match in dates, times, numbers, entity, etc.. \n"
+  },
+  {
+    "description": "Untranslated_text",
+    "content": "Untranslated text -- Words in the source text that are not translated into the target language, excluding proper nouns (e.g., names, brands) and placeholders (e.g., #GOODS_NAME#). Please compare word by word, as long as there are untranslated words, they belong to the error.\n"
+  },
+  {
+    "description": "Inappropriate_for_context",
+    "content": "Inappropriate for context -- Use of a term that differs from term usage required by a specified termbase or other resource. (Different from the definition of Mistranslaion.)\n"
+  },
+  {
+    "description": "Inconsistent_use",
+    "content": "Inconsistent_use -- Terminology is used inconsistently (Different from the definition of Mistranslaion.)\n"
+  },
+  {
+    "description": "Punctuation",
+    "content": "Punctuation -- 1.Punctuation errors include unpaired quotes, missing or unnecessary marks, and incorrect use. 2.According to international standards, whatever the language is, the thousand separator must use a comma (,) and the decimal point must use a period (.)). Strict adherence to international standards is required, not following this rule will be considered an error. \n"
+  },
+  {
+    "description": "Spelling",
+    "content": "Spelling -- Error occurring when a word is misspelled.\n"
+  },
+  {
+    "description": "Grammar",
+    "content": "Grammar -- Subject-verb disagreement, incorrect verb tenses or forms, and improper declension of nouns, pronouns, or adjectives. \n"
+  },
+  {
+    "description": "Register",
+    "content": "Register -- Wrong grammatical register (e.g. inappropriately informal pronouns).\n"
+  },
+  {
+    "description": "Inconsistency",
+    "content": "Inconsistency -- Internal inconsistency (not related to terminology).\n"
+  },
+  {
+    "description": "Character_encoding",
+    "content": "Character encoding -- Error occurring when characters garbled due to incorrect application of an encoding.\n"
+  },
+  {
+    "description": "Awkward",
+    "content": "Awkward -- Some languages provide grammatical and stylistic features that support complex, embedded ideas, which can result in awkward style if a target text retains these features. \n"
+  },
+  {
+    "description": "Address_format",
+    "content": "Address format -- Wrong format for addresses.\n"
+  },
+  {
+    "description": "Currency_format",
+    "content": "Currency format -- Wrong format for currency.\n"
+  },
+  {
+    "description": "Date_format",
+    "content": "Date format -- Wrong format for dates.\n"
+  },
+  {
+    "description": "Name_format",
+    "content": "Name format -- Wrong format for names.\n"
+  },
+  {
+    "description": "Telephone_format",
+    "content": "Telephone format -- Wrong format for telephone numbers.\n"
+  },
+  {
+    "description": "Time_format",
+    "content": "Time format -- Wrong format for time expressions.\n"
+  }
+]

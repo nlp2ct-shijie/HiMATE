@@ -1,0 +1,250 @@
+[
+  {
+    "description": "system_prompt",
+    "content": "You are an evaluator conducting manual translation evaluation based on the MQM framework, and you need to determine whether the following translation from English to German below exists an error.\n"
+  },
+  {
+    "description": "error_severity",
+    "content": "You also need to indicate the degree of error. Error severities are assigned independent of category, and consist of Major, Minor, and Neutral levels, corresponding, respectively, to actual translation or grammatical errors, smaller imperfections, and purely subjective opinions about the translation. Give a simple explanation. \n"
+  },
+  {
+    "description": "answer_requirment_less_error_exist",
+    "content": "Please check if there are errors in the translation and if it meets the above definition of error types. NOTE that it is normal to have no error. Please don't be too nitpicky.It can be considered that there is no error without affecting the overall meaning of the translation. \n"
+  },
+  {
+    "description": "answer_requirment_more_error_exist",
+    "content": "Please check if there are errors in the translation and if it meets the above definition of error types.\n"
+  },
+  {
+    "description": "reply_format",
+    "content": "Reply ONLY with the below format:\nError Exist: 'Yes' or 'No'.\nError Severity: 'Major', 'Minor', or 'Neutral'.\nExplanation: <Your Explanation>"
+  },
+  {
+    "description": "Addition",
+    "content": "Please determine whether there is an 'Addition' error in translation: Addition -- The translation introduces any information—including words, phrases, implied meanings, punctuation, or tone—that is not present in the source text, thereby expanding or altering the original meaning or format.\n"
+  },
+  {
+    "description": "Addition_example_1",
+    "content": "\nExample1:\nSource: He has previously been chief of staff at the Ministry of Transport and also served in the Ministry of Social Affairs. \nTranslation: Zuvor war er Stabschef im Verkehrsministerium und war auch im Sozialministerium tätig. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Addition_example_2",
+    "content": "\nExample2:\nSource: He has previously been chief of staff at the Ministry of Transport and also served in the Ministry of Social Affairs. \nTranslation: Zuvor war er Stabschef im Verkehrsministerium und auch im Sozialministerium tätig. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Omission",
+    "content": "Please determine whether there is an 'Omission' error in translation: Omission -- A paragraph present in the source (including the noun, verb, adverb, adverbial, punctuation and so on) is missing in the translation. \n"
+  },
+  {
+    "description": "Omission_example_1",
+    "content": "\nExample1:\nSource: Until now the government is refusing to release nearly 600 Taliban prisoners it calls high-profile criminals and has offered to free alternatives. \nTranslation: Bis jetzt weigert sich die Regierung, fast 600 Taliban-Gefangene freizulassen, die sie als hochkarätige Kriminelle bezeichnet und Alternativen angeboten hat. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Omission_example_2",
+    "content": "\nExample2:\nSource: Until now the government is refusing to release nearly 600 Taliban prisoners it calls high-profile criminals and has offered to free alternatives. \nTranslation: Bis jetzt weigert sich die Regierung, fast 600 Taliban-Gefangene freizulassen, die sie als hochkarätige Kriminelle bezeichnet, und hat angeboten, Freilassungsalternativen zu prüfen. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Mistranslation",
+    "content": "Please determine whether there is an 'Mistranslation' error in translation: Mistranslation -- Incorrect use in target content of a word, inconsistent match, and the incorrect segmentation.. \n"
+  },
+  {
+    "description": "Mistranslation_example_1",
+    "content": "\nExample1:\nSource: Photos tweeted by the department showed broken glass and paint splattered at a police building. \nTranslation: Bilder, die von der Polizei getwittert wurden, zeigten Glasscherben und Farbspuren an einem Polizeigebäude. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Mistranslation_example_2",
+    "content": "\nExample2:\nSource: Photos tweeted by the department showed broken glass and paint splattered at a police building. \nTranslation: Bilder, die von der Polizei getwittert wurden, zeigten Glasscherben und verspritzte Farbe an einem Polizeigebäude. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Untranslated_text",
+    "content": "Please determine whether there is an 'Untranslated text' error in translation: Untranslated text -- Words in the source text that are not translated into the target language, excluding proper nouns (e.g., names, brands) and placeholders (e.g., #GOODS_NAME#). Please compare word by word, as long as there are untranslated words, they belong to the error.\n"
+  },
+  {
+    "description": "Untranslated_text_example_1",
+    "content": "\nExample1:\nSource: Remote work is likely to become more common. \nTranslation: Remote-Arbeit wird wahrscheinlich häufiger werden. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Untranslated_text_example_2",
+    "content": "\nExample2:\nSource: Your order for #PRODUCT_NAME# has been shipped. \nTranslation: Ihre Bestellung für #PRODUCT_NAME# wurde versendet.  \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Inappropriate_for_context",
+    "content": "Please determine whether there is an 'Inappropriate for context' error in translation: Inappropriate for context -- Use of a term that differs from term usage required by a specified termbase or other resource. (Different from the definition of Mistranslaion.)\n"
+  },
+  {
+    "description": "Inappropriate_for_context_example_1",
+    "content": "\nExample1:\nSource: \"Beer cans, soda cans, church key cans from the old days.\" \nTranslation: „Bierdosen, Getränkedosen, Kirchenschlüsseldosen aus der alten Zeit.“ \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Inappropriate_for_context_example_2",
+    "content": "\nExample2:\nSource: \"Beer cans, soda cans, church key cans from the old days.\" \nTranslation: „Bierdosen, Getränkedosen, Dosenöffnerdosen aus der alten Zeit.“ \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Inconsistent_use",
+    "content": "Please determine whether there is an 'Inconsistent_use' error in translation: Inconsistent_use -- Terminology is used inconsistently (Different from the definition of Mistranslaion.)\n"
+  },
+  {
+    "description": "Inconsistent_use_example_1",
+    "content": "\nExample1:\nSource: \"Once the shrimp came in, there were suddenly no natural cleaners in the lake,\" Schladow said. \nTranslation: „Als die Krabben kamen, gab es plötzlich keine natürlichen Reiniger mehr im See“, sagt Schladow. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Inconsistent_use_example_2",
+    "content": "\nExample2:\nSource: \"Once the shrimp came in, there were suddenly no natural cleaners in the lake,\" Schladow said. \nTranslation: „Als die Garnelen kamen, gab es plötzlich keine natürlichen Reiniger mehr im See“, sagt Schladow. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Punctuation",
+    "content": "Please determine whether there is an 'Punctuation' error in translation: Punctuation -- 1.Punctuation errors include unpaired quotes, missing or unnecessary marks, and incorrect use. 2.According to international standards, whatever the language is, the thousand separator must use a comma (,) and the decimal point must use a period (.)). Strict adherence to international standards is required, not following this rule will be considered an error. \n"
+  },
+  {
+    "description": "Punctuation_example_1",
+    "content": "\nExample1:\nSource: \"Sunday Morning\" Matinee: Celebrating Rodgers & Hart \nTranslation: \"Sunday Morning\" Matinee: Rodgers & Hart wird gefeiert \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Punctuation_example_2",
+    "content": "\nExample2:\nSource: \"Sunday Morning\" Matinee: Celebrating Rodgers & Hart \nTranslation: „Sunday Morning“ Matinee: Rodgers & Hart wird gefeiert \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Spelling",
+    "content": "Please determine whether there is an 'Spelling' error in translation: Spelling -- Error occurring when a word is misspelled.\n"
+  },
+  {
+    "description": "Spelling_example_1",
+    "content": "\nExample1:\nSource: Egypt begins registering data of voters abroad for senate elections \nTranslation: ÄGypten beginnt mit der Registrierung von Wählerdaten im Ausland für Senatswahlen \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Spelling_example_2",
+    "content": "\nExample2:\nSource: Egypt begins registering data of voters abroad for senate elections \nTranslation: Ägypten beginnt mit der Registrierung von Wählerdaten im Ausland für Senatswahlen \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Grammar",
+    "content": "Please determine whether there is an 'Grammar' error in translation: Grammar -- Subject-verb disagreement, incorrect verb tenses or forms, and improper declension of nouns, pronouns, or adjectives. \n"
+  },
+  {
+    "description": "Grammar_example_1",
+    "content": "\nExample1:\nSource: The women are working in the office. \nTranslation: Die Frau arbeitet im Büro. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Grammar_example_2",
+    "content": "\nExample2:\nSource: The women are working in the office. \nTranslation: Die Frauen arbeiten im Büro. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Register",
+    "content": "Please determine whether there is an 'Register' error in translation: Register -- Wrong grammatical register (e.g. inappropriately informal pronouns).\n"
+  },
+  {
+    "description": "Register_example_1",
+    "content": "\nExample1:\nSource: That means you can see that disc 80 feet down. \nTranslation: Das bedeutet, dass Sie die Scheibe in 80 Fuß Tiefe sehen können. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Register_example_2",
+    "content": "\nExample2:\nSource: That means you can see that disc 80 feet down. \nTranslation: Das bedeutet, dass man die Scheibe in 80 Fuß Tiefe sehen kann. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Inconsistency",
+    "content": "Please determine whether there is an 'Inconsistency' error in translation: Inconsistency -- Internal inconsistency (not related to terminology).\n"
+  },
+  {
+    "description": "Inconsistency_example_1",
+    "content": "\nExample1:\nSource: 200-Plus Firefighters Respond To Karen Fire Burning In Jurupa Valley - CBS Los Angeles \nTranslation: Mehr als 200 Feuerwehrleute reagieren auf Karen-Feuer, <v>der</v> im Jurupa Valley brennt \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Inconsistency_example_2",
+    "content": "\nExample2:\nSource: 200-Plus Firefighters Respond To Karen Fire Burning In Jurupa Valley - CBS Los Angeles \nTranslation: Mehr als 200 Feuerwehrleute reagieren auf das Karen-Feuer, das im Jurupa Valley brennt \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Character_encoding",
+    "content": "Please determine whether there is an 'Character encoding' error in translation: Character encoding -- Error occurring when characters garbled due to incorrect application of an encoding.\n"
+  },
+  {
+    "description": "Character_encoding_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: The weather in Berlin is beautiful today. \nTranslation: Das Wetter in Berlin ist heute schÃ¶n. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Character_encoding_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: The weather in Berlin is beautiful today. \nTranslation: Das Wetter in Berlin ist heute schön. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Awkward",
+    "content": "Please determine whether there is an 'Awkward' error in translation: Awkward -- Some languages provide grammatical and stylistic features that support complex, embedded ideas, which can result in awkward style if a target text retains these features. \n"
+  },
+  {
+    "description": "Awkward_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: UN says thousands of anti-Pakistan militants in Afghanistan \nTranslation: UNO sagt Tausende Anti-Pakistan-Kämpfer in Afghanistan. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Awkward_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: UN says thousands of anti-Pakistan militants in Afghanistan \nTranslation: Die UNO berichtet von Tausenden von Anti-Pakistan-Kämpfern in Afghanistan. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Address_format",
+    "content": "Please determine whether there is an 'Address format' error in translation: Address format -- Error involving inappropriate address format for locale. Such as Wrong form used for postal codes for target locale.\n"
+  },
+  {
+    "description": "Address_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 17th June Street 112, 10117 Berlin, Germany \nTranslation: 112 17th June Street, Berlin 10117, Deutschland \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Address_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 17th June Street 112, 10117 Berlin, Germany \nTranslation: Straße des 17. Juni 112, 10117 Berlin, Deutschland \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Currency_format",
+    "content": "Please determine whether there is an 'Currency format' error in translation: Currency format -- Incorrect currency format for its locale.\n"
+  },
+  {
+    "description": "Currency_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: He has also provided a cycle and Rs 2500. \nTranslation: Er hat auch einen Zyklus und Rs 2.500 zur Verfügung gestellt. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Currency_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: He has also provided a cycle and Rs 2500. \nTranslation: Er hat auch einen Zyklus und 2.500 INR zur Verfügung gestellt. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Date_format",
+    "content": "Please determine whether there is an 'Date format' error in translation: Date format -- Error involving inappropriate date format for its locale.\n"
+  },
+  {
+    "description": "Date_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: The event will take place on March 15. \nTranslation: Das Treffen ist für den 15 März geplant. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Date_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: The event will take place on March 15. \nTranslation: Das Treffen ist für den 15. März geplant. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Name_format",
+    "content": "Please determine whether there is an 'Name format' error in translation: Name format -- Name format used in text or a data field inappropriate for its locale, such as switching the order of last and first names inappropriately. \n"
+  },
+  {
+    "description": "Name_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: Dr. Emily Schmidt will attend the conference. \nTranslation: Dr. Schmidt Emily wird an der Konferenz teilnehmen. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Name_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: Dr. Emily Schmidt will attend the conference. \nTranslation: Dr. Emily Schmidt wird an der Konferenz teilnehmen. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Telephone_format",
+    "content": "Please determine whether there is an 'Telephone format' error in translation: Telephone format -- Error involving inappropriate telephone number form for locale. \n"
+  },
+  {
+    "description": "Telephone_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: Call us at (030) 1234-5678 for assistance. \nTranslation: Rufen Sie uns unter (030) 1234-5678 an, um Hilfe zu erhalten. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Telephone_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: Call us at (030) 1234-5678 for assistance. \nTranslation: Rufen Sie uns unter 030 1234 5678 an, um Hilfe zu erhalten. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Time_format",
+    "content": "Please determine whether there is an 'Time format' error in translation: Time format -- Error involving incorrrect time format for its locale. For example, Unless specified as using a 24 hour clock, US time formats report time after noon using 12-hour notation (for instance, '7:54:12 pm' instead of '19:54:12' used in many other countries.)\n"
+  },
+  {
+    "description": "Time_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: The conference call begins at 3:30 PM. \nTranslation: Die Telefonkonferenz beginnt um 3:30 PM. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Time_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: The conference call begins at 3:30 PM. \nTranslation: Die Telefonkonferenz beginnt um 15:30 Uhr. \nError Exist: No.\nError severity: Neutral."
+  }
+]

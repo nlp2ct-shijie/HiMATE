@@ -1,0 +1,250 @@
+[
+  {
+    "description": "system_prompt",
+    "content": "You are an evaluator conducting manual translation evaluation based on the MQM framework, and you need to determine whether the following translation from Chinese to English below exists an error.\n"
+  },
+  {
+    "description": "error_severity",
+    "content": "You also need to indicate the degree of error. Error severities are assigned independent of category, and consist of Major, Minor, and Neutral levels, corresponding, respectively, to actual translation or grammatical errors, smaller imperfections, and purely subjective opinions about the translation. Give a simple explanation. \n"
+  },
+  {
+    "description": "answer_requirment_less_error_exist",
+    "content": "Please check if there are errors in the translation and if it meets the above definition of error types. NOTE that it is normal to have no error. Please don't be too nitpicky.It can be considered that there is no error without affecting the overall meaning of the translation. \n"
+  },
+  {
+    "description": "answer_requirment_more_error_exist",
+    "content": "Please check if there are errors in the translation and if it meets the above definition of error types. \n"
+  },
+  {
+    "description": "reply_format",
+    "content": "Reply ONLY with the below format:\nError Exist: 'Yes' or 'No'.\nError Severity: 'Major', 'Minor', or 'Neutral'.\nExplanation: <Your Explanation>"
+  },
+  {
+    "description": "Addition",
+    "content": "Please determine whether there is an 'Addition' error in translation: Addition -- The translation introduces any information—including words, phrases, implied meanings, punctuation, or tone—that is not present in the source text, thereby expanding or altering the original meaning or format.\n"
+  },
+  {
+    "description": "Addition_example_1",
+    "content": "\nExample1:\nSource: 作者表示，2002年SARS暴发时，起初中国准备不足。 \nTranslation: The author stated that when the SARS outbreak broke out in 2002, China was underprepared at first. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Addition_example_2",
+    "content": "\nExample2:\nSource: 作者表示，2002年SARS暴发时，起初中国准备不足。 \nTranslation: The author stated that when the SARS broke out in 2002, China was underprepared at first. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Omission",
+    "content": "Please determine whether there is an 'Omission' error in translation: Omission -- A paragraph present in the source (including the noun, verb, adverb, adverbial, punctuation and so on) is missing in the translation. \n"
+  },
+  {
+    "description": "Omission_example_1",
+    "content": "\nExample1:\nSource: 7月份以来，江西汛期、灾情不断升级。 \nTranslation: Since July, the flood season in Jiangxi has been escalating. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Omission_example_2",
+    "content": "\nExample2:\nSource: 7月份以来，江西汛期、灾情不断升级。 \nTranslation: Since July, the flood season and disaster situation in Jiangxi have been escalating. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Mistranslation",
+    "content": "Please determine whether there is an 'Mistranslation' error in translation: Mistranslation -- Incorrect use in target content of a word, inconsistent match, and the incorrect segmentation.. \n"
+  },
+  {
+    "description": "Mistranslation_example_1",
+    "content": "\nExample1:\nSource: 这种药的剂量不应超过200毫克。 \nTranslation: The medicine should be administered in doses greater than 200 mg. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Mistranslation_example_2",
+    "content": "\nExample2:\nSource: 这种药的剂量不应超过200毫克。 \nTranslation: The medicine should not be administered in doses greater than 200 mg. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Untranslated_text",
+    "content": "Please determine whether there is an 'Untranslated text' error in translation: Untranslated text -- Words in the source text that are not translated into the target language, excluding proper nouns (e.g., names, brands) and placeholders (e.g., #GOODS_NAME#). Please compare word by word, as long as there are untranslated words, they belong to the error.\n"
+  },
+  {
+    "description": "Untranslated_text_example_1",
+    "content": "\nExample1:\nSource: 根据路透社报道 \nTranslation: According to 路透社 \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Untranslated_text_example_2",
+    "content": "\nExample2:\nSource: 我在下单购买#GOODS_NAME#的时候 \nTranslation: When I placed an order to purchase #GOODS_NAME#  \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Inappropriate_for_context",
+    "content": "Please determine whether there is an 'Inappropriate for context' error in translation: Inappropriate for context -- Use of a term that differs from term usage required by a specified termbase or other resource. (Different from the definition of Mistranslaion.)\n"
+  },
+  {
+    "description": "Inappropriate_for_context_example_1",
+    "content": "\nExample1:\nSource: 《柳叶刀》刊文赞扬中国抗疫，鼓励各国学习经验 \nTranslation: Lancet article praises China's efforts to fight epidemic, encourages countries to learn from experience \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Inappropriate_for_context_example_2",
+    "content": "\nExample2:\nSource: 《柳叶刀》刊文赞扬中国抗疫，鼓励各国学习经验 \nTranslation: The Lancet praises China's efforts to fight epidemic, encourages countries to learn from experience \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Inconsistent_use",
+    "content": "Please determine whether there is an 'Inconsistent_use' error in translation: Inconsistent_use -- Terminology is used inconsistently (Different from the definition of Mistranslaion.)\n"
+  },
+  {
+    "description": "Inconsistent_use_example_1",
+    "content": "\nExample1:\nSource: 截至目前，已有142家企业加入参展商联盟，覆盖全球23个国家和地区。 \nTranslation: Up to now, 142 companies have joined the Exhibitor Union, covering 23 countries and regions around the world. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Inconsistent_use_example_2",
+    "content": "\nExample2:\nSource: 截至目前，已有142家企业加入参展商联盟，覆盖全球23个国家和地区。 \nTranslation: 142 companies have joined the Exhibitor Alliance, covering 23 countries and regions around the world. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Punctuation",
+    "content": "Please determine whether there is an 'Punctuation' error in translation: Punctuation -- 1.Punctuation errors include unpaired quotes, missing or unnecessary marks, and incorrect use. 2.According to international standards, whatever the language is, the thousand separator must use a comma (,) and the decimal point must use a period (.)). Strict adherence to international standards is required, not following this rule will be considered an error. \n"
+  },
+  {
+    "description": "Punctuation_example_1",
+    "content": "\nExample1:\nSource: 相关成果已作为国际期刊《温室气体：科学与技术》封面文章发表。 \nTranslation: Related results have been published as the cover article of the international journal “Greenhouse Gas: Science and Technology”. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Punctuation_example_2",
+    "content": "\nExample2:\nSource: 相关成果已作为国际期刊《温室气体：科学与技术》封面文章发表。 \nTranslation: Related results have been published as the cover article of the international journal Greenhouse Gas: Science and Technology. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Spelling",
+    "content": "Please determine whether there is an 'Spelling' error in translation: Spelling -- Error occurring when a word is misspelled.\n"
+  },
+  {
+    "description": "Spelling_example_1",
+    "content": "\nExample1:\nSource: 用这个App来订酒店很方便。 \nTranslation: It's very convenient to book hotels with this app. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Spelling_example_2",
+    "content": "\nExample2:\nSource: 用这个App来订酒店很方便。 \nTranslation: It's very convenient to book hotels with this App. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Grammar",
+    "content": "Please determine whether there is an 'Grammar' error in translation: Grammar -- Subject-verb disagreement, incorrect verb tenses or forms, and improper declension of nouns, pronouns, or adjectives. \n"
+  },
+  {
+    "description": "Grammar_example_1",
+    "content": "\nExample1:\nSource: 国际米兰解锁了第3000场意甲比赛 \nTranslation: Inter Milan unlock 3000th Serie A match \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Grammar_example_2",
+    "content": "\nExample2:\nSource: 国际米兰解锁了第3000场意甲比赛 \nTranslation: Inter Milan has unlocked 3000th Serie A match \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Register",
+    "content": "Please determine whether there is an 'Register' error in translation: Register -- Wrong grammatical register (e.g. inappropriately informal pronouns).\n"
+  },
+  {
+    "description": "Register_example_1",
+    "content": "\nExample1:\nSource: 我们在这个项目中做得很好，大家都很开心。 \nTranslation: We did great in this project, and you all are really happy. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Register_example_2",
+    "content": "\nExample2:\nSource: 我们在这个项目中做得很好，大家都很开心。 \nTranslation: We did great in this project, and everyone is really happy. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Inconsistency",
+    "content": "Please determine whether there is an 'Inconsistency' error in translation: Inconsistency -- Internal inconsistency (not related to terminology).\n"
+  },
+  {
+    "description": "Inconsistency_example_1",
+    "content": "\nExample1:\nSource: 房内一名两岁儿童仅受轻伤，被平安救出。 \nTranslation: A two-year-old child in the <v>house</v> suffered only minor injuries and was rescued safely. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Inconsistency_example_2",
+    "content": "\nExample2:\nSource: 房内一名两岁儿童仅受轻伤，被平安救出。 \nTranslation: A two-year-old child in the room suffered only minor injuries and was rescued safely. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Character_encoding",
+    "content": "Please determine whether there is an 'Character encoding' error in translation: Character encoding -- Error occurring when characters garbled due to incorrect application of an encoding.\n"
+  },
+  {
+    "description": "Character_encoding_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 他已承认，是自己在教堂里点火。 \nTranslation: He has <v>#@##</v> that he <v>*$@#@</v> the fire in the church. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Character_encoding_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 他已承认，是自己在教堂里点火。 \nTranslation: He has admitted that he set the fire in the church. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Awkward",
+    "content": "Please determine whether there is an 'Awkward' error in translation: Awkward -- Some languages provide grammatical and stylistic features that support complex, embedded ideas, which can result in awkward style if a target text retains these features. \n"
+  },
+  {
+    "description": "Awkward_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 他正在学习中文。 \nTranslation: He is learning <v>the Chinese language</v>. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Awkward_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 他正在学习中文。 \nTranslation: He is learning Chinese. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Address_format",
+    "content": "Please determine whether there is an 'Address format' error in translation: Address format -- Error involving inappropriate address format for locale. Such as Wrong form used for postal codes for target locale.\n"
+  },
+  {
+    "description": "Address_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 请将邮件发送到北京市朝阳区建国门大街12号。 \nTranslation: Please send the mail to 12, <v>Jian Guo Men Da Jie</v>, Chaoyang District, Beijing. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Address_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 请将邮件发送到北京市朝阳区建国门大街12号。 \nTranslation: Please send the mail to 12, Jianguomen Street, Chaoyang District, Beijing. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Currency_format",
+    "content": "Please determine whether there is an 'Currency format' error in translation: Currency format -- Incorrect currency format for its locale.\n"
+  },
+  {
+    "description": "Currency_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 这台电脑的价格是3万元。 \nTranslation: The price of this computer is <v>30 thousand yuan</v>. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Currency_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 这台电脑的价格是3万元。 \nTranslation: The price of this computer is 30,000 yuan. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Date_format",
+    "content": "Please determine whether there is an 'Date format' error in translation: Date format -- Error involving inappropriate date format for its locale.\n"
+  },
+  {
+    "description": "Date_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 会议安排在2023年5月10日。 \nTranslation: The meeting is scheduled for <v>10/05/2023</v>. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Date_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 会议安排在2023年5月10日。 \nTranslation: The meeting is scheduled for May 10, 2023. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Name_format",
+    "content": "Please determine whether there is an 'Name format' error in translation: Name format -- Name format used in text or a data field inappropriate for its locale, such as switching the order of last and first names inappropriately. \n"
+  },
+  {
+    "description": "Name_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 请联系张伟先生。 \nTranslation: Please contact <v>Mr. Wei Zhang.</v> \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Name_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 请联系张伟先生。 \nTranslation: Please contact Mr. Zhang Wei. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Telephone_format",
+    "content": "Please determine whether there is an 'Telephone format' error in translation: Telephone format -- Error involving inappropriate telephone number form for locale. \n"
+  },
+  {
+    "description": "Telephone_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 请拨打电话：021-12345678。 \nTranslation: Please call this number: <v>(021) 123-45678</v>. \nError Exist: Yes.\nError severity: Minor."
+  },
+  {
+    "description": "Telephone_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 请拨打电话：021-12345678。 \nTranslation: Please call this number: 021 1234 5678. \nError Exist: No.\nError severity: Neutral."
+  },
+  {
+    "description": "Time_format",
+    "content": "Please determine whether there is an 'Time format' error in translation: Time format -- Error involving incorrrect time format for its locale. For example, Unless specified as using a 24 hour clock, US time formats report time after noon using 12-hour notation (for instance, '7:54:12 pm' instead of '19:54:12' used in many other countries.)\n"
+  },
+  {
+    "description": "Time_format_example_1",
+    "content": "\nExample1(<v>...</v> denotes the error location):\nSource: 会议将在下午三点半开始。 \nTranslation: The meeting will start at <v>15:30</v>. \nError Exist: Yes.\nError severity: Major."
+  },
+  {
+    "description": "Time_format_example_2",
+    "content": "\nExample2(<v>...</v> denotes the error location):\nSource: 会议将在下午三点半开始。 \nTranslation: The meeting will start at 3:30 PM. \nError Exist: No.\nError severity: Neutral."
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "description": "system_prompt",
+    "content": "You are an evaluator conducting manual translation evaluation based on the MQM framework. Here you are given a pair of sentences: a source Chinese sentence and its English translation. Previously, you have identified specific types of errors and the severity based on the error definition. Based on the below information, please correct the errors in the translation.\n"
+  },
+  {
+    "description": "error_severity",
+    "content": "Error severities are assigned independent of category, and consist of Major, Minor, and Neutral levels, corresponding, respectively, to actual translation or grammatical errors, smaller imperfections, and purely subjective opinions about the translation."
+  },
+  {
+    "description": "reply_format",
+    "content": "Don't supply any analysis or information, and Reply ONLY with the below format:\nCorrected English Translation: <Your translation>."
+  },
+  {
+    "description": "Addition",
+    "content": "Addition -- Translation includes information not present in the source.\n"
+  },
+  {
+    "description": "Omission",
+    "content": "Omission -- A paragraph present in the source is missing in the translation. \n"
+  },
+  {
+    "description": "Mistranslation",
+    "content": "Mistranslation -- Incorrect use in target content of a word or inconsistent match in dates, times, numbers, entity, etc.. \n"
+  },
+  {
+    "description": "Untranslated_text",
+    "content": "Untranslated text -- Source text has been left untranslated.\n"
+  },
+  {
+    "description": "Inappropriate_for_context",
+    "content": "Inappropriate for context -- Use of a term that differs from term usage required by a specified termbase or other resource.\n"
+  },
+  {
+    "description": "Inconsistent_use",
+    "content": "Inconsistent_use -- Terminology is used inconsistently\n"
+  },
+  {
+    "description": "Punctuation",
+    "content": "Punctuation -- Unpaired quote marks or parentheses. Missing mark from a set of paired punctuation marks, such as a missing parenthesis or quote mark. \n"
+  },
+  {
+    "description": "Spelling",
+    "content": "Spelling -- Error occurring when a word is misspelled.\n"
+  },
+  {
+    "description": "Grammar",
+    "content": "Grammar -- Subject-verb disagreement, incorrect verb tenses or forms, and improper declension of nouns, pronouns, or adjectives. \n"
+  },
+  {
+    "description": "Register",
+    "content": "Register -- Wrong grammatical register (e.g. inappropriately informal pronouns).\n"
+  },
+  {
+    "description": "Inconsistency",
+    "content": "Inconsistency -- Internal inconsistency (not related to terminology).\n"
+  },
+  {
+    "description": "Character_encoding",
+    "content": "Character encoding -- Error occurring when characters garbled due to incorrect application of an encoding.\n"
+  },
+  {
+    "description": "Awkward",
+    "content": "Awkward -- Some languages provide grammatical and stylistic features that support complex, embedded ideas, which can result in awkward style if a target text retains these features. \n"
+  },
+  {
+    "description": "Address_format",
+    "content": "Address format -- Wrong format for addresses.\n"
+  },
+  {
+    "description": "Currency_format",
+    "content": "Currency format -- Wrong format for currency.\n"
+  },
+  {
+    "description": "Date_format",
+    "content": "Date format -- Wrong format for dates.\n"
+  },
+  {
+    "description": "Name_format",
+    "content": "Name format -- Wrong format for names.\n"
+  },
+  {
+    "description": "Telephone_format",
+    "content": "Telephone format -- Wrong format for telephone numbers.\n"
+  },
+  {
+    "description": "Time_format",
+    "content": "Time format -- Wrong format for time expressions.\n"
+  }
+]
