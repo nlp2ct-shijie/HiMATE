@@ -6,7 +6,7 @@ Implementation of the paper "**HIMATE: A Hierarchical Multi-Agent Framework for 
 The advancement of Large Language Models (LLMs) enables flexible and interpretable automatic evaluations. In the field of machine translation evaluation, utilizing LLMs with translation error annotations based on Multidimensional Quality Metrics (MQM) yield more human-aligned judgments. However, we contend that existing methods inadequately exploit the fine-grained structural and semantic information within the MQM hierarchy. Furthermore, there is a deficiency in active mechanisms to mitigate inherent model hallucinations in comparative LLM-based approaches. In this paper, we propose **HiMATE**, a **Hi**erarchical **M**ulti-**A**gent Framework for Machine **T**ranslation **E**valuation. To enable detailed error subtype evaluation, we develop hierarchical multi-agent systems grounded in the MQM error typology. Two additional strategies are incorporated to enhance the reliability of error detection and severity assessment within the framework, leveraging self-reflection and collaborative agents discussions. Empirically, HiMATE surpasses competitive baselines across different datasets, demonstrating its effectiveness in conducting human-aligned machine translation evaluations. Further analysis underscores its strengths in error assessment and span detection.
 #### Framework Introduction
 We propose HIMATE, a novel multi-agent machine translation evaluation framework that employs MQM hierarchy-derived structural-semantic information to configure agent topology, generating human-aligned judgments through a three-phase process: subtype error evaluation initiates the workflow, followed by self-reflection mechanisms to verify detected errors, and culminates in collaborative discussions to achieve consensus.
-![overall_framework](https://github.com/nlp2ct-shijie/HiMATE/blob/main/framework.png)
+![overall_framework](https://anonymous.4open.science/r/HiMATE-Anony/framework.png)
 #### Practical Advantages
 - HiMATE enhances alignment with human assessment, achieving the best or second-best correlation and similarity on the ZH-EN and EN-DE datasets of MQM22.
 - HiMATE demonstrates superior accuracy in error span identification compared to existing LLM-based methods, particularly excelling in long-sentence robustness and fine-grained error localization.
@@ -66,5 +66,3 @@ HiMATE
 ├── responses                              # the responses of each stage
 ├── logs                                   # the final output log files
 ```
-## Citing
-Please kindly cite us if you find our papers or codes useful.
