@@ -14,6 +14,7 @@ We propose HIMATE, a novel multi-agent machine translation evaluation framework 
 #### Main Results
 ![segment_level_results](https://github.com/nlp2ct-shijie/HiMATE/blob/main/segment_level_results.png)
 ![system_level_results](https://github.com/nlp2ct-shijie/HiMATE/blob/main/system_level_results.png)
+
 The results of Tables 1 and Table 2 above clearly demonstrate the excellent performance of HiMATE in both segment-level and system-level evaluations. The high correlation with human evaluation and the best meta score emphasize the effectiveness of HiMATE in conducting high-quality evaluations. The performance of HiMATE in different backbone models further confirms its robustness and efficiency.
 
 ## Requirement & Installation
