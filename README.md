@@ -75,10 +75,10 @@ HiMATE
 ## Citation
 ```
 @article{zhang2025himate,
-      title={HiMATE: A Hierarchical Multi-Agent Framework for Machine Translation Evaluation}, 
-      author={Shijie Zhang and Renhao Li and Songsheng Wang and Philipp Koehn and Min Yang and Derek F. Wong},
-      year={2025},
-	  journal={arXiv preprint arXiv:2505.16281},
-      url={https://arxiv.org/abs/2505.16281}, 
+  title={HiMATE: A Hierarchical Multi-Agent Framework for Machine Translation Evaluation}, 
+  author={Shijie Zhang and Renhao Li and Songsheng Wang and Philipp Koehn and Min Yang and Derek F. Wong},
+  journal={arXiv preprint arXiv:2505.16281},
+  year={2025},
+  url={https://arxiv.org/abs/2505.16281}
 }
 ```
